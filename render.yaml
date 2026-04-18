@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: contestreminder-backend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build:server
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false          # Set this manually in Render dashboard
+      - key: SESSION_SECRET
+        generateValue: true  # Render auto-generates a secure random value
+      - key: FRONTEND_URL
+        sync: false          # Set to your Vercel frontend URL after deploying frontend
+      - key: GOOGLE_CLIENT_ID
+        sync: false          # Optional: only needed for Google OAuth
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false          # Optional: only needed for Google OAuth
+    healthCheckPath: /api/health
