@@ -1,5 +1,5 @@
-import { db, pool } from "./db";
-import { users } from "./shared/schema";
+import { db, pool } from "./db.js";
+import { users } from "./shared/schema.js";
 
 import { eq } from "drizzle-orm";
 

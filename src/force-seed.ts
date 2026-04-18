@@ -1,6 +1,6 @@
-import { db } from "./db";
-import { courses as coursesTable, lessons as lessonsTable } from "./shared/schema";
-import { MemStorage } from "./storage";
+import { db } from "./db.js";
+import { courses as coursesTable, lessons as lessonsTable } from "./shared/schema.js";
+import { MemStorage } from "./storage.js";
 import { eq } from "drizzle-orm";
 
 async function run() {
