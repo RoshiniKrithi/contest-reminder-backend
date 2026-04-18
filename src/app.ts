@@ -1,8 +1,8 @@
 import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import cors from "cors";
-import { registerRoutes } from "./routes";
-import { log } from "./log";
+import { registerRoutes } from "./routes.js";
+import { log } from "./log.js";
 
 const app = express();
 
@@ -111,7 +111,7 @@ export async function initializeApp() {
         console.error(`🔴 [FATAL ERROR] ${status} - ${message}`);
         if (err.stack) console.error(err.stack);
 
-        import('./log').then(({ log }) => {
+        import('./log.js').then(({ log }) => {
             log(`[ERROR HANDLER] Status: ${status}, Message: ${message}, Stack: ${err.stack}`, 'error-handler');
         });
 

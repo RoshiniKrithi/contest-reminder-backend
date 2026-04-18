@@ -1,9 +1,9 @@
 import cron from "node-cron";
 import { eq, and, sql } from "drizzle-orm";
-import { db } from "./db";
-import { contests } from "./shared/schema";
-import { sendWhatsAppReminder, isTwilioConfigured } from "./whatsappService";
-import { log } from "./log";
+import { db } from "./db.js";
+import { contests } from "./shared/schema.js";
+import { sendWhatsAppReminder, isTwilioConfigured } from "./whatsappService.js";
+import { log } from "./log.js";
 
 const NOTIFY_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 

@@ -2,7 +2,7 @@ import "dotenv/config";
 import pg from 'pg';
 const { Pool } = pg;
 import { drizzle } from 'drizzle-orm/node-postgres';
-import * as schema from "./shared/schema";
+import * as schema from "./shared/schema.js";
 
 if (!process.env.DATABASE_URL) {
   console.error("❌ Environment Error: DATABASE_URL is missing from process.env");

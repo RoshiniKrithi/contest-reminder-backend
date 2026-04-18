@@ -1,7 +1,7 @@
 import cron from "node-cron";
-import { ContestService } from "./contest-apis";
-import { storage } from "./storage";
-import { log } from "./log";
+import { ContestService } from "./contest-apis.js";
+import { storage } from "./storage.js";
+import { log } from "./log.js";
 
 export function setupContestScheduler() {
   // Sync every 15 minutes

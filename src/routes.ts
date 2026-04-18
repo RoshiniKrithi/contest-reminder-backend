@@ -1,6 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage } from "./storage.js";
 import {
   insertContestSchema,
   insertProblemSchema,
@@ -9,10 +9,10 @@ import {
   insertLessonSchema,
   insertEnrollmentSchema,
   insertLessonProgressSchema
-} from "./shared/schema";
-import { ContestService, isAllowedPlatform } from "./contest-apis";
-import { sendWhatsAppReminder, isTwilioConfigured } from "./whatsappService";
-import { setupAuth } from "./auth";
+} from "./shared/schema.js";
+import { ContestService, isAllowedPlatform } from "./contest-apis.js";
+import { sendWhatsAppReminder, isTwilioConfigured } from "./whatsappService.js";
+import { setupAuth } from "./auth.js";
 import type { Request, Response, NextFunction } from "express";
 
 function ensureAdmin(req: Request, res: Response, next: NextFunction) {

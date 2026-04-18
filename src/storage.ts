@@ -36,17 +36,17 @@ import {
   type Bookmark,
   type InsertBookmark,
   type User as SelectUser
-} from "./shared/schema";
+} from "./shared/schema.js";
 import { randomUUID } from "crypto";
-import { typingChallenges as typingSeed, quizQuestions as quizSeed, brainTeasers as teaserSeed } from "./challenge-seed-data";
+import { typingChallenges as typingSeed, quizQuestions as quizSeed, brainTeasers as teaserSeed } from "./challenge-seed-data.js";
 import session from "express-session";
-const createMemoryStore = require("memorystore");
+import createMemoryStore from "memorystore";
 import { eq, and, desc, asc, sql } from "drizzle-orm";
 import connectPgSimple from "connect-pg-simple";
 
 const MemoryStore = (createMemoryStore as any)(session);
 
-import { db, pool } from "./db";
+import { db, pool } from "./db.js";
 
 
 export interface IStorage {

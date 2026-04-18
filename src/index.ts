@@ -1,8 +1,8 @@
 import "dotenv/config";
-import { initializeApp, app } from "./app";
-import { log } from "./log";
-import { setupContestScheduler } from "./scheduler";
-import { setupNotificationScheduler } from "./notificationScheduler";
+import { initializeApp, app } from "./app.js";
+import { log } from "./log.js";
+import { setupContestScheduler } from "./scheduler.js";
+import { setupNotificationScheduler } from "./notificationScheduler.js";
 
 async function startServer() {
   const server = await initializeApp();
