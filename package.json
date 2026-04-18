@@ -10,7 +10,7 @@
     "dev": "vite",
     "server": "tsx server/index.ts",
     "server:dev": "tsx server/index.ts",
-    "build": "vite build",
+    "build": "vite build && npm run build:server",
     "build:server": "npx tsc --project server/tsconfig.json",
     "start": "node dist/index.js",
     "vercel-build": "vite build",
